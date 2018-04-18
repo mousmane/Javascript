@@ -5,7 +5,7 @@
     <title>Exercice 2</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style10-2a.css" rel="stylesheet">
+    <link href="css/style16.css" rel="stylesheet">
 </head>
 
 <body>
@@ -66,13 +66,13 @@ Lors de la saisie du Pseudo, vous devrez afficher en temps réel dans le titre i
         
         <input type="text" onkeyup="verifAge()"  id="age"     placeholder="Quel est votre Age ?"><br />
         <div class="ageError">Vous devez avoir au moins 18 ans pour vous inscrire.</div><br />
-        
+        <div class="ageNaNError">Vous devez entrer un nombre.</div><br />        
         <input type="email"  id="email"   placeholder="Quel est votre Email ?"><br /><br />
         <input type="password"   id="mdp"     placeholder="****"><br /><br />
-        <input type="button" id="submit" value="M'inscrire">
+        <input type="button" onclick="ajouterMembre();afficherMembres()" id="submit" value="M'inscrire">
     </form>
 
-    <script src="./assets/js/10-exercice2a.js"></script>
+    <script src="./assets/js/16.js"></script>
 </body>
 
 </html>
