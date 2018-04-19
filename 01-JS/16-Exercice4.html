@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <title>Exercice 2</title>
@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<!-- 
+    <!-- 
         CONSIGNE : 
 
 Considérons un Formulaire HTML avec les champs pseudo, age, email et mdp.
@@ -56,20 +56,34 @@ Lors de la saisie du Pseudo, vous devrez afficher en temps réel dans le titre i
           
       NB : Devra bien entendu s'afficher le membre qui vient de s'inscrire.
 
-    -->    
+    -->
     <h1>Formulaire d'inscription</h1>
-    <h3 id="Bienvenue"></h3>
+    <h3 id="Bienvenue">Bonjour</h3>
     <!-- Emmet : form>(input[type=text][id=])*5 -->
-    <form>
-        <input type="text" onkeyup="verifPseudo();changerTitre()"  id="pseudo"  placeholder="Choisissez un Pseudo"><br />
-        <div class="pseudoError">Ce pseudo est déjà pris.</div><br />
-        
-        <input type="text" onkeyup="verifAge()"  id="age"     placeholder="Quel est votre Age ?"><br />
-        <div class="ageError">Vous devez avoir au moins 18 ans pour vous inscrire.</div><br />
-        <div class="ageNaNError">Vous devez entrer un nombre.</div><br />        
-        <input type="email"  id="email"   placeholder="Quel est votre Email ?"><br /><br />
-        <input type="password"   id="mdp"     placeholder="****"><br /><br />
-        <input type="button" onclick="ajouterMembre();afficherMembres()" id="submit" value="M'inscrire">
+    <form id="adhesion">
+        <!-- onkeyup="verifPseudo();changerTitre()"  -->
+        <input type="text" id="pseudo" placeholder="Choisissez un Pseudo">
+        <br />
+        <div class="pseudoError">Ce pseudo est déjà pris.</div>
+        <br />
+        <!-- onkeyup="verifAge()"  -->
+        <input type="text" id="age" placeholder="Quel est votre Age ?">
+        <br />
+        <div class="ageError">Vous devez avoir au moins 18 ans pour vous inscrire.</div>
+        <br />
+        <div class="ageNaNError">Vous devez entrer un nombre.</div>
+        <br />
+        <!-- onkeyup="verifEmail()" -->
+        <input type="email" id="email" placeholder="Quel est votre Email ?">
+        <br />
+        <br />
+        <div class="emailError">Vous devez entrer une adresse mail correcte.</div>
+        <br />
+        <input type="password" id="mdp" placeholder="****">
+        <br />
+        <br />
+        <!-- onclick="ajouterMembre();afficherMembres()" -->
+        <input type="submit" id="submit" value="M'inscrire">
     </form>
 
     <script src="./assets/js/16-exercice4.js"></script>

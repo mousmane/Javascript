@@ -32,10 +32,12 @@ function verifPseudo() {
         /* si on trouve une correspondance entre la saisie et un pseudo de la liste des membres */
         document.getElementsByClassName("pseudoError")[0].style.display = "block";
         document.getElementById("submit").disabled = 'disabled';
+        document.getElementById("Bienvenue").innerHTML = "Bonjour";
     } else {
+        // on ne trouve pas de correspondance
         document.getElementsByClassName("pseudoError")[0].style.display = "none";
         document.getElementById("submit").disabled = '';
-
+        document.getElementById("Bienvenue").innerHTML = "Bonjour " + userPseudo;
     }
 
 }
@@ -78,6 +80,23 @@ function verifAge() {
 
 }
 
+function verifEmail() {
+    let userEnteredEmail = document.getElementById("email").value.trim();
+    l(userEnteredEmail);
+    userEnteredEmail = document.forms['adhesion'].elements['email'].value.trim();
+    l(userEnteredEmail);
+
+    var reg = /^([A-Za-z0-9_\-\.]){1,}\@([A-Za-z0-9_\-\.]){1,}\.([A-Za-z]{2,4})$/;
+
+    document.getElementsByClassName("emailError")[0].style.display = "none"
+
+    if (userEnteredEmail != "") {
+        if (!reg.test(userEnteredEmail)) {
+            document.getElementsByClassName("emailError")[0].style.display = "block";
+        } else l("test of email again regexp successful!");
+    }
+}
+
 function changerTitre() {
     let userPseudo = document.getElementById("pseudo").value.trim();
     if (userPseudo.length > 0)
@@ -97,13 +116,48 @@ function ajouterMembre() {
         mdp: userMdp
     })
 
-    document.write("Merci " + userPseudo + " ! Tu es maintenant inscrit.<br>");
+    document.body.innerHTML += "<br><br>Merci " + userPseudo + " ! Tu es maintenant inscrit.<br>";
 }
 
 function afficherMembres() {
-    document.write("Voici la liste de nos Membres :</p><ol>");
+    document.body.innerHTML += "<br><br>Voici la liste de nos Membres :</p><ol>";
     membres.forEach(element => {
-        document.write("<li>" + element.pseudo + " " + element.age + " ans</li>");
+        document.body.innerHTML += "<li>" + element.pseudo + " " + element.age + " ans</li>";
     });
-    document.write("</ol>");
+    document.body.innerHTML += "</ol>";
 }
+
+function ajouterEcouteursEvenements() {
+    l("dans ajouterEcouteursEvenements()...");
+
+    document.getElementById("pseudo").addEventListener('input',
+        function () {
+            verifPseudo();
+            changerTitre();
+        }
+    );
+    document.getElementById("age").addEventListener('change', verifAge);
+    document.getElementById("email").addEventListener('change', verifEmail);
+    // document.getElementById("submit").addEventListener('click',
+    //     function (e) {
+    //         e.preventDefault();
+
+    //         ajouterMembre();
+    //         afficherMembres();
+    //     }
+    // );
+    document.getElementById("adhesion").addEventListener('submit',
+        function (event) {
+            l("dans submit");
+            // Stop de la redirection
+            event.preventDefault();
+            ajouterMembre();
+            afficherMembres();
+        });
+
+}
+
+window.addEventListener("load", function () {
+    ajouterEcouteursEvenements();
+    l("dans addEventListener()");
+});
