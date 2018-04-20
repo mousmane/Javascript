@@ -23,4 +23,4 @@ $(function(){
     // -- sélectionner par condition de valeur d'un attribut
     l($('[href="#"]'));
 
-});
+}); 
