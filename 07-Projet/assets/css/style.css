@@ -1,0 +1,81 @@
+body{
+    background: url(../img/fond.jpg);
+    font-weight: 500;
+    font-size: 1.5em;
+    /* color: aliceblue; */
+}
+
+/*------------------------------
+            BG Colors
+--------------------------------*/
+
+.purple {
+    background: #6f42c1;
+}
+.yellow {
+    background: yellow;
+}
+.green {
+    background: green;
+}
+.orange{
+    background: orange;
+}
+.brown{
+    background: saddlebrown;
+}
+
+/*------------------------------
+            Sizes
+--------------------------------*/
+
+.fullheight{
+    height: 100%;
+}
+
+.fullwidth{
+    width: 100%;
+}
+
+/*------------------------------
+            Main
+--------------------------------*/
+
+main{
+    border: 2px solid;
+    border-radius: 10px 10px 10px 10px;
+}
+
+/*------------------------------
+            Navbar
+--------------------------------*/
+
+
+/*------------------------------
+            Section XXX
+--------------------------------*/
+#section1{
+    min-height: 300px;
+}
+
+/*------------------------------
+            Section XXX
+--------------------------------*/
+
+
+/*------------------------------
+            Section XXX
+--------------------------------*/
+
+
+/*------------------------------
+            Footer
+--------------------------------*/
+
+footer{
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+footer p{
+}
