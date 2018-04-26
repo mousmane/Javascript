@@ -1,0 +1,149 @@
+body {
+    /* background: #061339; */
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/*---------------------------------------
+            Les Polices de caractères
+-----------------------------------------*/
+
+h1, h2, h3 {
+    font-family: 'Merienda', cursive;
+}
+
+h1, #slogan .container {
+    color: #fff;
+}
+
+h2, h3 {
+    color: #2F4073;
+}
+
+/*---------------------------------------
+                Barre du Haut
+-----------------------------------------*/
+
+nav {
+    background: #061339;
+}
+
+nav a h1 {
+    font-size: 1.2em;
+}
+
+.navbar-brand {
+    margin: 0;
+}
+
+/*---------------------------------------
+                Slogan
+-----------------------------------------*/
+
+#slogan {
+    background: url(../img/background.jpg);
+    height: 180px;
+}
+
+#slogan .container {
+    text-align: center;
+    font-family: 'Merienda', cursive;
+    font-size: 2.9em;
+    height: 100%;
+    line-height: 180px;
+}
+
+/*---------------------------------------
+                Chats
+-----------------------------------------*/
+
+#chats {
+    background-color: #f1f1f1;
+    min-height: 500px;
+}
+
+#chats .container {
+    height: 100%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+#choixChat {
+    border: 1px solid rgb(177, 194, 236);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.btn-group.special {
+    display: flex;
+}
+
+.special .btn {
+    flex: 1
+}
+
+.alert-adoption {
+    display: none;
+}
+
+.carousel-indicators li {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    border: 1px solid #fff;
+}
+
+.carousel-item img {
+    min-width: 100%;
+}
+
+/*---------------------------------------
+                Information
+-----------------------------------------*/
+
+#information {
+    min-height: 300px;
+    background-color: #dddddd;
+}
+
+#information .container {
+    height: 100%;
+    padding: 20px 20px;
+}
+
+#tetedechat {
+    background-color: #7885A5;
+    background-image: url(../img/tete-chat.png);
+    background-size: 100%;
+}
+
+#tetedechat img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#tetedechat:hover {
+    background-color: #061339;
+}
+
+/*---------------------------------------
+                    Footer
+-----------------------------------------*/
+
+footer {
+    background-color: #061339;
+    text-align: right;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 3px 0;
+}
+
+/*---------------------------------------
+                    Media Queries
+-----------------------------------------*/
+
+/* Small devices (width up to 767px) */
+
+@media (max-width: 767px) {}
