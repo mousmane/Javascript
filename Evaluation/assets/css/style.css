@@ -3,6 +3,7 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    min-width: 200px;
 }
 
 /*---------------------------------------
@@ -51,7 +52,12 @@ nav a h1 {
     font-family: 'Merienda', cursive;
     font-size: 2.9em;
     height: 100%;
-    line-height: 180px;
+    vertical-align: center;
+}
+
+.slogan-part{
+    display: inline-block;
+    margin-top: 40px;
 }
 
 /*---------------------------------------
@@ -68,6 +74,8 @@ nav a h1 {
     padding-top: 70px;
     padding-bottom: 70px;
 }
+
+
 
 #choixChat {
     border: 1px solid rgb(177, 194, 236);
@@ -113,14 +121,12 @@ nav a h1 {
 }
 
 #tetedechat {
+    width: 200px;
+    height:200px;
     background-color: #7885A5;
     background-image: url(../img/tete-chat.png);
-    background-size: 100%;
-}
-
-#tetedechat img {
-    max-width: 100%;
-    max-height: 100%;
+    background-size: 100% 100%;
+    margin: auto;
 }
 
 #tetedechat:hover {
@@ -144,6 +150,15 @@ footer {
                     Media Queries
 -----------------------------------------*/
 
-/* Small devices (width up to 767px) */
+/* Small devices (width of 767px and less) */
 
-@media (max-width: 767px) {       }
+@media (max-width: 767px) {
+    .slogan-part{
+        display: block;
+        margin-top: 0;
+    }
+    #slogan .container {
+        font-size: 2em;
+        padding-top: 15px;
+    }
+}
