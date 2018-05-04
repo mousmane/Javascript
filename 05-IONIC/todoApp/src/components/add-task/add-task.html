@@ -1,0 +1,17 @@
+<form class="form-inline" #f="ngForm" (ngSubmit)="notifyNewTask()" *ngIf="active">
+
+  <ion-input type="search"
+         placeholder="Saisir une nouvelle tâche..."
+         #title="ngModel"
+         [(ngModel)]="task.title"
+         [ngModelOptions]="{standalone: true}"
+             [class.is-invalid]="f.invalid && f.touched"
+         required
+  ></ion-input>
+
+  <button ion-button type="submit" [disabled]="f.invalid">
+    Ajouter&nbsp;
+    <ion-icon ios="ios-add" md="md-add"></ion-icon>
+  </button>
+
+</form>
