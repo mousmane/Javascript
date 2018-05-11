@@ -23,8 +23,8 @@ export class HomePage {
     console.log(this.tasks);
   }
 
-  markAsDone(task: Task) {
-    task.status = true;
+  toggleStatus(task: Task) {
+    task.status = !task.status;
   }
 
   removeTask(task: Task) {

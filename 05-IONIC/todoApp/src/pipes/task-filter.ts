@@ -8,7 +8,6 @@ import * as _ from 'lodash';
 })
 export class TaskFilterPipe implements PipeTransform {
   transform(tasks: Task[], status: boolean): Task[] {
-    // console.log('filter start');
     // console.log(tasks);
     return _.filter(tasks,{'status': status});
   }

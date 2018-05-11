@@ -10,28 +10,29 @@
 <ion-content>
       <ion-list>
         <ion-list-header>
-          <strong>A faire</strong>
+          <strong><u>A faire</u></strong>
         </ion-list-header>
         <ion-item-sliding *ngFor="let task of tasks | TaskFilter : false">
           <ion-item>
             {{task.title}}
           </ion-item>
           <ion-item-options>
-            <button  ion-button color="secondary" (click)="markAsDone(task)"><ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon> Marquer faite</button>
+            <button ion-button color="secondary" (click)="toggleStatus(task)"><ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon></button>
           </ion-item-options>
         </ion-item-sliding>
       </ion-list>
   <hr>
       <ion-list>
         <ion-list-header>
-          <strong>Fait</strong>
+          <strong><u>Fait</u></strong>
         </ion-list-header>
         <ion-item-sliding *ngFor="let task of tasks | TaskFilter : true">
           <ion-item>
             {{task.title}}
           </ion-item>
           <ion-item-options>
-            <button  ion-button color="danger" (click)="removeTask(task)"><ion-icon ios="ios-trash" md="md-trash"></ion-icon> Supprimer</button>
+            <button  ion-button color="light" (click)="toggleStatus(task)"><ion-icon ios="ios-undo" md="md-undo"></ion-icon></button>
+            <button  ion-button color="danger" (click)="removeTask(task)"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button>
           </ion-item-options>
         </ion-item-sliding>
       </ion-list>
